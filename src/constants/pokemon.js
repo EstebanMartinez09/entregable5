@@ -19,6 +19,7 @@ const gradientsByType = {
     shadow: "bg-gradient-to-b from-gray-500 to-gray-300",
     bug: "bg-gradient-to-b from-green-500 to-green-300",
     psychic: "bg-gradient-to-b from-purple-500 to-purple-300",
+    intimidate: "bg-gradient-to-b from-pink-500 to-pink-300",
 }
 
 export { gradientsByType }

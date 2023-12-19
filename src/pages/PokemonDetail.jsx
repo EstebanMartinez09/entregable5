@@ -61,14 +61,14 @@ export const PokemonDetail = () => {
               </div>
             </div>
 
-            <section className="grid grid-cols-[1fr_1fr] mb-10">
+            <section className="grid grid-cols-[1fr_1fr] gap-4 items-center mb-10">
 
               <div className="flex flex-col gap-4">
                 <h5>Type</h5>
-                <ul className="flex justify-center items-center gap-3 ">
+                <ul className="flex flex-col sm:flex-row justify-center items-center gap-3 ">
                   {
                     pokemonInfo?.types.map((type) => (
-                      <li key={type.type.name} className={`${gradientsByType[type.type.name]} capitalize  max-w-[150px] w-full text-white`}>
+                      <li key={type.type.name} className={` ${gradientsByType[type.type.name]} capitalize  max-w-[150px] w-full text-white`}>
                         {type.type.name}
                       </li>
                     ))
@@ -78,7 +78,7 @@ export const PokemonDetail = () => {
 
               <div className="flex flex-col gap-4">
                 <h5>Abilities</h5>
-                <ul className="flex justify-center items-center gap-3 ">
+                <ul className="flex flex-col sm:flex-row justify-center items-center gap-3 ">
                   {
                     pokemonInfo?.abilities.map((ability) => (
                       <li key={ability.ability.name} className=" capitalize text-[#0F0F2D] max-w-[150px] w-full border">{ability.ability.name}</li>
