@@ -17,7 +17,7 @@ export const PokemonPreview = ({ pokemonUrl }) => {
             .catch((error) => console.log(error))
     }, [pokemonUrl])
     return (
-        <Link to={`/pokedex/${pokemonInfo?.id}`} className={`p-3 ${gradientsByType[pokemonInfo?.types[0].type.name]} rounded-lg text-center `}>
+        <Link to={`/pokedex/${pokemonInfo?.id}`} className={`p-3 ${gradientsByType[pokemonInfo?.types[0].type.name]} rounded-lg text-center`}>
 
             <header className=" relative h-[140px]">
                 {pokemonInfo?.sprites.other["official-artwork"].front_default ? (

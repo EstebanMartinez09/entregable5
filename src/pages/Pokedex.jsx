@@ -14,7 +14,7 @@ export const Pokedex = () => {
 
   const pokemonByName = allPokemons.filter((pokemon) => pokemon.name.includes(pokemonName.trim()))
 
-  
+
 
   const handleOnSubmit = (e) => {
     e.preventDefault()
@@ -24,15 +24,15 @@ export const Pokedex = () => {
   const handleChangeType = (e) => {
     const url = e.target.value
     axios
-    .get(url)
-    .then(({ data }) => {
-      if (url.includes("type") ) {
-        setAllPokemons(data.pokemon.map((pokemon) => pokemon.pokemon))
-      } else {
-        setAllPokemons(data.results)
-      }
-    })
-    .catch((error) => console.log(error))
+      .get(url)
+      .then(({ data }) => {
+        if (url.includes("type")) {
+          setAllPokemons(data.pokemon.map((pokemon) => pokemon.pokemon))
+        } else {
+          setAllPokemons(data.results)
+        }
+      })
+      .catch((error) => console.log(error))
   }
 
   useEffect(() => {
@@ -48,7 +48,7 @@ export const Pokedex = () => {
       .then(({ data }) => setTypes(data.results))
       .catch((error) => console.log(error))
   }, [])
-  
+
 
 
   return (
@@ -56,24 +56,32 @@ export const Pokedex = () => {
       <header>
         <Header />
       </header>
-      <main className="mt-5 px-5">
-        <div>
-          <p className="text-[#FE1936] font-semibold">Welcome {trainerName}, <span className="text-[#333333] font-normal">here you can adventure in the world of the Pokemon!</span></p>
-        </div>
-        <form onSubmit={handleOnSubmit}>
-          <div>
-            <input name="pokemonName" placeholder="Search Pokemon" type="text" />
-            <button>Search</button>
-          </div>
-          <select onChange={handleChangeType} name="" id="">
-            <option value="https://pokeapi.co/api/v2/pokemon?limit=250">All</option>
-            {
-              types.map((type) => (
-                <option className="capitalize" key={type.url} value={type.url}>{type.name}</option>
-              ))
-            }
-          </select>
-        </form>
+      <main className="mt-10 px-5 flex flex-col gap-6">
+        <section className="mx-auto w-full max-w-[1050px]">
+         
+            <p className="text-[#FE1936] font-semibold text-center mb-5 sm:text-start">Welcome {trainerName}, <span className="text-[#333333] font-normal">here you can adventure in the world of the Pokemon!</span></p>
+         
+
+          <form className="grid sm:flex gap-2 justify-center sm:justify-between" onSubmit={handleOnSubmit}>
+
+            <div className="shadow-md w-full max-w-[500px] items-center flex">
+              <input className="p-2 w-full" name="pokemonName" placeholder="Search Pokemon" type="text" />
+              <button className="bg-[#D93F3F] text-white p-2 w-[80px]">Search</button>
+            </div>
+
+            <select className="shadow-md p-2 bg-white w-full max-w-[470px]" onChange={handleChangeType} name="" id="">
+              <option value="https://pokeapi.co/api/v2/pokemon?limit=250">All</option>
+              {
+                types.map((type) => (
+                  <option className="capitalize" key={type.url} value={type.url}>{type.name}</option>
+                ))
+              }
+            </select>
+
+          </form>
+        </section>
+
+
         <PokemonList pokemons={pokemonByName} />
       </main>
     </section>
