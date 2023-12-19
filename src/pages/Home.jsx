@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux"
 import { Footer } from "../components/Footer"
-import { Logo } from "../components/logo"
+import { Logo } from "../components/Logo"
 import { setTrainerName } from "../store/slices/trainerName.slice"
 import capitalize from "../utils/funtions"
 import { useNavigate } from "react-router-dom"
