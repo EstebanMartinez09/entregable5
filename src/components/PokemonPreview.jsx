@@ -4,9 +4,10 @@ import capitalize from "../utils/funtions"
 import { gradientsByType } from "../constants/pokemon"
 import { Link } from "react-router-dom"
 
+
 export const PokemonPreview = ({ pokemonUrl }) => {
 
-    const [pokemonInfo, setPokemonInfo] = useState(null)
+    const [pokemonInfo, setPokemonInfo] = useState(null);
 
 
 
@@ -56,9 +57,10 @@ export const PokemonPreview = ({ pokemonUrl }) => {
                         ))
                     }
                 </ul>
-
+                
             </main>
 
         </Link>
+        
     )
 }
