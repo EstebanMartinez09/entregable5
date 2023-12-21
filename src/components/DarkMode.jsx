@@ -20,7 +20,8 @@ const DarkMode = () => {
 
   return (
     <div>
-      {darkMode ? <IconSunglasses onClick={handleToggleTheme} /> : <IconEyeglassOff onClick={handleToggleTheme} />}
+      {darkMode ? <IconSunglasses className='text-[#333] bg-white rounded-md' onClick={handleToggleTheme} /> : 
+      <IconEyeglassOff className='text-[#333] bg-white rounded-md' onClick={handleToggleTheme} />}
     </div>
   )
 }
