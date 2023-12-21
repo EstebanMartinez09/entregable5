@@ -13,9 +13,9 @@ const ButtonList = () => {
   };
 
   return (
-    <div className="object-left-top">
-      <div className="container">
-        <div className="custom-radio">
+    <div className="object-left-top ">
+      <div className="container rounded-3xl">
+        <div className="custom-radio ">
           <input
             type="radio"
             id="radio-1"
