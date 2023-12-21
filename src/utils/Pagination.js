@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 
 const PaginatePokemon = (pokemon, currentPage) => {
     const pokemon_PerPage = useSelector((store) => store.pokemonNumber);
-    console.log(pokemon_PerPage);
+   
     //? pokemon que se renderizan en la pagina actual
 
     
