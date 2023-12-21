@@ -9,3 +9,22 @@ body {
     background-color: #e9e9e9;
 
 }
+.animationPokeball{
+    animation: rotateAnimation 5s linear infinite;
+}
+
+@keyframes rotateAnimation {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+}
+
+@layer components {
+    .shadow-gradient-blue-to-red {
+      box-shadow: 0 0 10px 0 #3498db, 0 0 20px 0 #e74c3c;
+    }
+  }
+  
