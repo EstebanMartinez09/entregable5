@@ -23,7 +23,7 @@ export const PokemonPreview = ({ pokemonUrl }) => {
             <header className=" relative h-[140px]">
                 {pokemonInfo?.sprites.other["official-artwork"].front_default ? (
                     <img
-                        className="absolute bottom-0 translate-y-[35%] w-full p-12"
+                        className="absolute bottom-0 translate-y-[35%] w-full p-12 max-w-[250px] max-h-[250px] translate-x-[-50%] left-1/2"
                         src={pokemonInfo.sprites.other["official-artwork"].front_default}
                         alt="imagen pokemon"
                     />
@@ -34,18 +34,19 @@ export const PokemonPreview = ({ pokemonUrl }) => {
                 )}
             </header>
 
-            <main className=" bg-white pt-10 grid gap-2 rounded-b-lg">
+            {/* Body de la card */}
+
+            <main className=" bg-white pt-10 grid gap-2 rounded-b-lg dark:bg-[#202020] dark:text px-3">
 
                 <h3 className="capitalize text-lg font-bold">{pokemonInfo?.name}</h3>
 
-                <h4 className="text-sm text-[#4F4F4F]">
-
+                <h4 className="text-sm ">
                     {pokemonInfo?.types.map((type) => capitalize(type.type.name)).join(" / ")}
                 </h4>
 
                 <h5 className="text-xs text-[#9F9F9F]">type</h5>
 
-                <hr />
+                <div className="bg-[#E5E5E5] rounded-3xl h-[3px] flex-1 w-full"></div>
 
                 <ul className="grid grid-cols-2 gap-2 p-2">
                     {
@@ -57,10 +58,10 @@ export const PokemonPreview = ({ pokemonUrl }) => {
                         ))
                     }
                 </ul>
-                
+
             </main>
 
         </Link>
-        
+
     )
 }

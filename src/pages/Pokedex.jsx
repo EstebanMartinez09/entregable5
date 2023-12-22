@@ -15,7 +15,7 @@ export const Pokedex = () => {
     pokemon.name.includes(pokemonName.trim())
   );
 
- 
+
   const handleOnSubmit = (e) => {
     e.preventDefault();
     setPokemonName(e.target.pokemonName.value.toLowerCase());
@@ -50,15 +50,16 @@ export const Pokedex = () => {
   }, []);
 
   return (
-    <section className="bg-[#e9e9e9] dark:bg-[#121212]">
+    <section className="bg-[#e9e9e9] dark:bg-[#333333] dark:text-white">
       <header>
-        <Header  />
+        <Header />
       </header>
+      {/* Main pokedex */}
       <main className="mt-10 px-5 flex flex-col gap-6 mb-8">
         <section className="mx-auto w-full max-w-[1050px] mb-10 z-10 relative">
           <p className="text-[#FE1936] font-semibold text-center mb-5 sm:text-start">
             Welcome {trainerName},{" "}
-            <span className="text-[#333333] font-normal">
+            <span className="text-[#333333] font-normal  dark:text-white">
               here you can adventure in the world of the Pokemon!
             </span>
           </p>
@@ -69,7 +70,7 @@ export const Pokedex = () => {
             >
               <div className="shadow-md w-full max-w-[500px] items-center flex">
                 <input
-                  className="p-2 w-full"
+                  className="p-2 w-full dark:text-black dark:bg-[#E5E5E5] dark:shadow-none "
                   name="pokemonName"
                   placeholder="Search Pokemon"
                   type="text"
@@ -80,7 +81,7 @@ export const Pokedex = () => {
               </div>
 
               <select
-                className="shadow-md p-2 bg-white w-full max-w-[470px]"
+                className="shadow-md p-2 bg-white w-full max-w-[470px] text-[#333333] dark:text-black dark:bg-[#E5E5E5] dark:shadow-none "
                 onChange={handleChangeType}
                 name=""
                 id=""
@@ -99,11 +100,11 @@ export const Pokedex = () => {
                 ))}
               </select>
             </form>
-            
-            
+
+
           </div>
         </section>
-        
+
 
         <PokemonList pokemons={pokemonByName} />
       </main>
